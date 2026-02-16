@@ -1,0 +1,90 @@
+$background-card-color: #F3F3F3;
+$header-card-text-size: 26px;
+$desribe-card-text-size: 20px;
+
+@mixin base-card($property-top, $property-right, $property-bottom, $property-left)
+{
+    border-radius: 20px;
+    width: 25%;
+    box-shadow: $property-top $property-right $property-bottom $property-left #DED2D2;
+}
+
+p
+{
+    margin: 0;
+}
+
+.card-wrp
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.card-content
+{
+    background-color: $background-card-color;
+    @include base-card(2.5px, 5px, 5px, 2.5px);
+}
+
+.card-content:hover
+{
+    box-shadow: 2.5px 5px 5px 2.5px #A69E9E;
+}
+
+.card-picture
+{
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.card-picture img
+{
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.card-name
+{
+    font-size: $header-card-text-size;
+    font-weight: 900;
+    padding: 10px;
+}
+
+.card-name-fumo1
+{
+
+    p
+    {
+        color: #F03D5A;
+    }
+
+}
+
+.card-name-fumo2
+{
+
+    p
+    {
+        color: #B8B493;
+    }
+
+}
+
+.card-name-fumo3
+{
+    
+    p
+    {
+        color: #A5D0D9;
+    }
+
+}
+
+.card-describe
+{
+    font-size: $desribe-card-text-size;
+    letter-spacing: 0.8px;
+    word-spacing: 4px;
+    padding: 10px;
+}
