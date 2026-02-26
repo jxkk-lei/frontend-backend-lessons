@@ -29,20 +29,20 @@ app.post('/products', (req, res) => {
     res.status(201).json(newProduct);
 });
 
-//Get-запрос для отображение юзеров
+//Get-запрос для отображение товаров
 
 app.get('/products', (req, res) => {
     res.send(JSON.stringify(products));
 });
 
-//Get-запрос для отображение юзеров по id
+//Get-запрос для отображение товаров по id
 
 app.get('/products/:id', (req, res) => {
     let product = products.find(u => u.id == req.params.id);
     res.send(JSON.stringify(product));
 });
 
-//Patсh-запрос для изменения параметра юзера по айди добавленный в url
+//Patсh-запрос для изменения параметра товара по айди добавленный в url
 app.patch('/products/:id', (req, res) => {
     const product = products.find(u => u.id == req.params.id);
     const { name, price } = req.body;
@@ -52,7 +52,7 @@ app.patch('/products/:id', (req, res) => {
     res.json(product);
 });
 
-//Удаление юзера по айди, анологочино patch, только в body ничего не передаём
+//Удаление товара по айди, анологочино patch, только в body ничего не передаём
 app.delete('/products/:id', (req, res) => {
     products = products.filter(u => u.id != req.params.id);
     res.send('Ok');
